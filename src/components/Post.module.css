@@ -1,0 +1,18 @@
+.post {
+  background-color: #ebecf0;
+  width: 800px;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 10px;
+}
+.postImg {
+  width: 500px;
+}
+
+.postTitle {
+  text-align: left;
+}
+
+.postExcerpt {
+  text-align: left;
+}
