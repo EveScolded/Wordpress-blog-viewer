@@ -1,0 +1,24 @@
+.sideBar {
+  position: fixed;
+  padding: 10px;
+  margin: 10px;
+  right: 10px;
+  width: 260px;
+  overflow-wrap: break-word;
+  background: #ebecf0;
+  border-radius: 10px;
+  border: 1px solid rgb(124, 120, 120);
+  box-shadow: 5px 2px rgb(173 167 167 / 60%);
+}
+
+@media (max-width: 1440px) {
+  .sideBar {
+    position: relative;
+    margin: 10px auto;
+  }
+}
+
+.domainList {
+  margin-top: 30px;
+  text-align: left;
+}

@@ -1,7 +1,6 @@
 import React from "react";
 import { WordpressPost } from "../model/WordpressPost";
 import ReactHtmlParser from "react-html-parser";
-import { classicNameResolver } from "typescript";
 import classes from "./Post.module.css";
 
 interface PostProps {
@@ -11,7 +10,10 @@ interface PostProps {
 export class Post extends React.Component<PostProps, {}> {
   private renderDate() {
     const date = new Date(this.props.post.date);
-    return `${date.getDay()}.${date.getMonth() + 1}.${date.getFullYear()}`;
+    return `${("0" + date.getDate()).slice(-2)}.${(
+      "0" +
+      (date.getMonth() + 1)
+    ).slice(-2)}.${date.getFullYear()}`;
   }
 
   public render() {
@@ -28,9 +30,11 @@ export class Post extends React.Component<PostProps, {}> {
         <p className={classes.postExcerpt}>
           {ReactHtmlParser(this.props.post.excerpt.rendered)}
         </p>
-        <div>
-          {this.renderDate()}
-          {this.props.post.link}
+        <div className={classes.postDateLink}>
+          <div className={classes.postDate}>🕑 {this.renderDate()}</div>
+          <div className={classes.postLink}>
+            🌐 <a href={this.props.post.link}>{this.props.post.link}</a>
+          </div>
         </div>
       </div>
     );

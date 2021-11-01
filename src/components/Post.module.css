@@ -4,6 +4,8 @@
   margin: 10px auto;
   padding: 10px;
   border-radius: 10px;
+  border: 1px solid rgb(124, 120, 120);
+  box-shadow: 5px 2px rgba(173, 167, 167, 0.596);
 }
 .postImg {
   width: 500px;
@@ -15,4 +17,23 @@
 
 .postExcerpt {
   text-align: left;
+}
+
+.postDateLink {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.postDate {
+  padding: 20px;
+}
+
+.postLink {
+  padding: 20px;
+}
+
+a {
+  color: black;
 }

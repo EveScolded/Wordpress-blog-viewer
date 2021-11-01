@@ -8,8 +8,8 @@ export default class Wordpress {
   }
 
   public async getPosts(): Promise<WordpressPost[]> {
-    const response = await fetch(this.domain + "/wp-json/wp/v2/posts?_embed");
-    const posts = response.json();
+    const response = await fetch(this.domain + "wp-json/wp/v2/posts?_embed");
+    const posts = await response.json();
     return posts;
   }
 }
