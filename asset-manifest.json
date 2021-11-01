@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Wordpress-blog-viewer/static/css/main.cd30bc91.chunk.css",
+    "main.js": "/Wordpress-blog-viewer/static/js/main.6e01d8b1.chunk.js",
+    "main.js.map": "/Wordpress-blog-viewer/static/js/main.6e01d8b1.chunk.js.map",
+    "runtime-main.js": "/Wordpress-blog-viewer/static/js/runtime-main.2f102df3.js",
+    "runtime-main.js.map": "/Wordpress-blog-viewer/static/js/runtime-main.2f102df3.js.map",
+    "static/js/2.b4f1819a.chunk.js": "/Wordpress-blog-viewer/static/js/2.b4f1819a.chunk.js",
+    "static/js/2.b4f1819a.chunk.js.map": "/Wordpress-blog-viewer/static/js/2.b4f1819a.chunk.js.map",
+    "static/js/3.f68dbcae.chunk.js": "/Wordpress-blog-viewer/static/js/3.f68dbcae.chunk.js",
+    "static/js/3.f68dbcae.chunk.js.map": "/Wordpress-blog-viewer/static/js/3.f68dbcae.chunk.js.map",
+    "index.html": "/Wordpress-blog-viewer/index.html",
+    "static/css/main.cd30bc91.chunk.css.map": "/Wordpress-blog-viewer/static/css/main.cd30bc91.chunk.css.map",
+    "static/js/2.b4f1819a.chunk.js.LICENSE.txt": "/Wordpress-blog-viewer/static/js/2.b4f1819a.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/Wordpress-blog-viewer/static/media/wall.30a77dee.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2f102df3.js",
+    "static/js/2.b4f1819a.chunk.js",
+    "static/css/main.cd30bc91.chunk.css",
+    "static/js/main.6e01d8b1.chunk.js"
+  ]
+}
