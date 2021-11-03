@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./Button";
 import classes from "./SideBar.module.css";
 
 interface SideBarProps {
@@ -15,6 +16,8 @@ export default class SideBar extends React.Component<SideBarProps, {}> {
     e.target.value = "";
   };
 
+  showDeleteButtons = () => {};
+
   render() {
     return (
       <div className={classes.sideBar}>
@@ -24,12 +27,13 @@ export default class SideBar extends React.Component<SideBarProps, {}> {
         </form>
         <div className={classes.domainList}>
           Added domain:
-          <ul>
-            {this.props.domainList.map((domain) => (
-              <li>{domain}</li>
-            ))}
-          </ul>
+          <Button onClick={this.showDeleteButtons}>edit</Button>
         </div>
+        <ul>
+          {this.props.domainList.map((domain) => (
+            <li>{domain}</li>
+          ))}
+        </ul>
       </div>
     );
   }
