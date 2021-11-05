@@ -20,16 +20,7 @@ class App extends React.Component<{}, AppState> {
     };
   }
 
-  addNewDomain = (domain) => {
-    const existingDomains = eval(localStorage.getItem("domains"));
-
-    const newDomainsList = existingDomains
-      ? [...existingDomains]
-      : [...this.state.domainsList];
-
-    newDomainsList.push(domain);
-    this.setState({ domainsList: newDomainsList });
-
+  getPosts(domain) {
     new Wordpress(domain).getPosts().then((posts) => {
       const newPostsList = [...this.state.posts, ...posts].sort((a, b) => {
         return new Date(b.date).getTime() - new Date(a.date).getTime();
@@ -37,8 +28,36 @@ class App extends React.Component<{}, AppState> {
 
       this.setState({ posts: newPostsList });
     });
+  }
 
-    localStorage.setItem("domains", JSON.stringify(newDomainsList));
+  componentDidMount() {
+    const existingDomains = eval(localStorage.getItem("domains"));
+    this.setState({ domainsList: existingDomains });
+
+    existingDomains.forEach((domain) => {
+      this.getPosts(domain);
+    });
+  }
+
+  addNewDomain = (domain) => {
+    const existingDomains = eval(localStorage.getItem("domains"));
+
+    if (!existingDomains.includes(domain)) {
+      const newDomainsList = existingDomains
+        ? [...existingDomains]
+        : [...this.state.domainsList];
+
+      newDomainsList.push(domain);
+      this.setState({ domainsList: newDomainsList });
+    } else {
+      alert("Domain already exsists.");
+    }
+
+    this.state.domainsList.forEach((domain) => {
+      this.getPosts(domain);
+    });
+
+    localStorage.setItem("domains", JSON.stringify(this.state.domainsList));
   };
 
   public render() {
