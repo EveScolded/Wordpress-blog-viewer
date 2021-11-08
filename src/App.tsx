@@ -74,16 +74,21 @@ class App extends React.Component<{}, AppState> {
 
   public render() {
     return (
-      <div className="App">
-        <header className="App-header">Amazing post viewer</header>
-
-        <SideBar
-          addNewDomain={this.addNewDomain}
-          domainList={this.state.domainsList}
-          deleteDomain={this.deleteDomain}
-        />
-        <PostList posts={this.state.posts}></PostList>
-      </div>
+      <>
+        <header className="appHeader">Amazing post viewer</header>
+        <div className="app">
+          <div className="sideBar">
+            <SideBar
+              addNewDomain={this.addNewDomain}
+              domainList={this.state.domainsList}
+              deleteDomain={this.deleteDomain}
+            />
+          </div>
+          <div className="postList">
+            <PostList posts={this.state.posts}></PostList>
+          </div>
+        </div>
+      </>
     );
   }
 }

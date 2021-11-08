@@ -2,8 +2,6 @@
   position: fixed;
   padding: 10px;
   margin: 10px;
-  right: 10px;
-  width: 260px;
   overflow-wrap: break-word;
   background: #ebecf0;
   border-radius: 10px;
@@ -11,16 +9,15 @@
   box-shadow: 5px 2px rgb(173 167 167 / 60%);
 }
 
-@media (max-width: 1440px) {
-  .sideBar {
-    position: relative;
-    margin: 10px auto;
-  }
-}
-
 .domainList {
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
-  /* text-align: left; */
+}
+@media (max-width: 1440px) {
+  .sideBar {
+    position: relative;
+    max-width: 400px;
+    margin: 10px auto;
+  }
 }

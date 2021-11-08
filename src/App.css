@@ -1,8 +1,10 @@
-.App {
+.app {
   text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-.App-header {
+.appHeader {
   background-color: #f8f8f898;
   padding: 10px;
   display: flex;
@@ -11,4 +13,19 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: rgb(0, 0, 0);
+}
+
+.sideBar {
+  grid-column-start: 3;
+}
+
+.postList {
+  grid-column-start: 2;
+}
+
+@media (max-width: 1440px) {
+  .app {
+    display: flex;
+    flex-direction: column;
+  }
 }
