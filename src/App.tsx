@@ -31,7 +31,7 @@ class App extends React.Component<{}, AppState> {
   }
 
   componentDidMount() {
-    const existingDomains = eval(localStorage.getItem("domains"));
+    const existingDomains = JSON.parse(localStorage.getItem("domains"));
     this.setState({ domainsList: existingDomains });
 
     existingDomains.forEach((domain) => {
@@ -40,18 +40,30 @@ class App extends React.Component<{}, AppState> {
   }
 
   addNewDomain = (domain) => {
-    const existingDomains = eval(localStorage.getItem("domains"));
+    const existingDomains = localStorage.getItem("domains");
 
     if (!existingDomains.includes(domain)) {
       const newDomainsList = existingDomains
-        ? [...existingDomains]
+        ? [...JSON.parse(existingDomains)]
         : [...this.state.domainsList];
 
       newDomainsList.push(domain);
-      this.setState({ domainsList: newDomainsList });
+
+      this.setState({ domainsList: newDomainsList }, () =>
+        localStorage.setItem("domains", JSON.stringify(this.state.domainsList))
+      );
+
+      this.getPosts(domain);
     } else {
       alert("Domain already exsists.");
     }
+  };
+
+  deleteDomain = (index) => {
+    const newDomainsList = [...this.state.domainsList];
+    newDomainsList.splice(index, 1);
+
+    this.setState({ domainsList: newDomainsList });
 
     this.state.domainsList.forEach((domain) => {
       this.getPosts(domain);
@@ -68,6 +80,7 @@ class App extends React.Component<{}, AppState> {
         <SideBar
           addNewDomain={this.addNewDomain}
           domainList={this.state.domainsList}
+          deleteDomain={this.deleteDomain}
         />
         <PostList posts={this.state.posts}></PostList>
       </div>

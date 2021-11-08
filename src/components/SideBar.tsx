@@ -4,6 +4,7 @@ import classes from "./SideBar.module.css";
 
 interface SideBarProps {
   addNewDomain: (domain: string) => void;
+  deleteDomain: (index: number) => void;
   domainList: string[];
 }
 
@@ -36,7 +37,12 @@ export default class SideBar extends React.Component<
     });
   };
 
-  deleteDomainHandler = () => {};
+  deleteDomainHandler = (index) => {
+    this.props.deleteDomain(index);
+    this.setState({
+      deleteButtons: !this.state.deleteButtons,
+    });
+  };
 
   render() {
     return (
@@ -50,12 +56,14 @@ export default class SideBar extends React.Component<
           <Button onClick={this.showDeleteButtons}>edit</Button>
         </div>
         <ul>
-          {this.props.domainList.map((domain) => {
+          {this.props.domainList.map((domain, index) => {
             return (
               <>
                 <li>{domain}</li>
                 {this.state.deleteButtons && (
-                  <Button onClick={this.deleteDomainHandler}>x</Button>
+                  <Button onClick={() => this.deleteDomainHandler(index)}>
+                    x
+                  </Button>
                 )}
               </>
             );
