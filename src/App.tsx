@@ -44,7 +44,10 @@ class App extends React.Component<{}, AppState> {
   private addNewDomain = (domain) => {
     const existingDomains = localStorage.getItem("domains");
 
-    if (existingDomains && !existingDomains.includes(domain)) {
+    if (
+      !existingDomains ||
+      (existingDomains && !existingDomains.includes(domain))
+    ) {
       const newDomainsList = existingDomains
         ? [...JSON.parse(existingDomains)]
         : [...this.state.domainsList];
