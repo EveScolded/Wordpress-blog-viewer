@@ -33,7 +33,7 @@ export class Post extends React.Component<PostProps, {}> {
         <div className={classes.postDateLink}>
           <div className={classes.postDate}>🕑 {this.renderDate()}</div>
           <div className={classes.postLink}>
-            🌐 <a href={this.props.post.link}>{this.props.post.link}</a>
+            🌐 <a href={this.props.post.link}>Link</a>
           </div>
         </div>
       </div>

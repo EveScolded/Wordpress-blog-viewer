@@ -47,9 +47,12 @@ export default class SideBar extends React.Component<
   render() {
     return (
       <div className={classes.sideBar}>
-        <form>
+        <form className={classes.domainForm}>
           <label>Add domain</label>
-          <input onKeyDown={this.inputConfirm}></input>
+          <input
+            className={classes.domainInput}
+            onKeyDown={this.inputConfirm}
+          ></input>
         </form>
         <div className={classes.domainList}>
           Added domain:
