@@ -6,7 +6,7 @@ interface ButtonProps {
 }
 
 export default class Button extends React.Component<ButtonProps, {}> {
-  render() {
+  public render() {
     return (
       <button className={classes.button} onClick={this.props.onClick}>
         {this.props.children}

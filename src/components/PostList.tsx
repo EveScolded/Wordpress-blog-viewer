@@ -8,7 +8,7 @@ interface PostListProps {
 }
 
 export class PostList extends React.Component<PostListProps, {}> {
-  render() {
+  public render() {
     return (
       <ul className={classes.postList}>
         {this.props.posts.map((post) => {

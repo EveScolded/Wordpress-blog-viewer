@@ -23,7 +23,7 @@ export default class SideBar extends React.Component<
     };
   }
 
-  inputConfirm = (e) => {
+  public inputConfirm = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
       this.props.addNewDomain(e.target.value);
@@ -31,20 +31,20 @@ export default class SideBar extends React.Component<
     }
   };
 
-  showDeleteButtons = () => {
+  public showDeleteButtons = () => {
     this.setState({
       deleteButtons: !this.state.deleteButtons,
     });
   };
 
-  deleteDomainHandler = (index) => {
+  public deleteDomainHandler = (index) => {
     this.props.deleteDomain(index);
     this.setState({
       deleteButtons: !this.state.deleteButtons,
     });
   };
 
-  render() {
+  public render() {
     return (
       <div className={classes.sideBar}>
         <form className={classes.domainForm}>
