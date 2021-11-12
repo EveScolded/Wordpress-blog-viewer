@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Wordpress-blog-viewer/static/css/main.f9777a13.chunk.css",
-    "main.js": "/Wordpress-blog-viewer/static/js/main.671ff6b3.chunk.js",
-    "main.js.map": "/Wordpress-blog-viewer/static/js/main.671ff6b3.chunk.js.map",
+    "main.js": "/Wordpress-blog-viewer/static/js/main.a9a17224.chunk.js",
+    "main.js.map": "/Wordpress-blog-viewer/static/js/main.a9a17224.chunk.js.map",
     "runtime-main.js": "/Wordpress-blog-viewer/static/js/runtime-main.5a8965b6.js",
     "runtime-main.js.map": "/Wordpress-blog-viewer/static/js/runtime-main.5a8965b6.js.map",
     "static/js/2.2c58128d.chunk.js": "/Wordpress-blog-viewer/static/js/2.2c58128d.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.5a8965b6.js",
     "static/js/2.2c58128d.chunk.js",
     "static/css/main.f9777a13.chunk.css",
-    "static/js/main.671ff6b3.chunk.js"
+    "static/js/main.a9a17224.chunk.js"
   ]
 }
