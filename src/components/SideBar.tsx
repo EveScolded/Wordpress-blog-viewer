@@ -54,11 +54,11 @@ export default class SideBar extends React.Component<
             onKeyDown={this.inputConfirm}
           ></input>
         </form>
-        <div className={classes.domainList}>
+        <div className={classes.domainListTitle}>
           Added domain:
           <Button onClick={this.showDeleteButtons}>edit</Button>
         </div>
-        <ul>
+        <ul className={classes.domainList}>
           {this.props.domainList.map((domain, index) => {
             return (
               <>

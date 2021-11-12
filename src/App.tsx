@@ -90,7 +90,11 @@ class App extends React.Component<{}, AppState> {
             />
           </div>
           <div className="postList">
-            <PostList posts={this.state.posts}></PostList>
+            {this.state.posts.length ? (
+              <PostList posts={this.state.posts}></PostList>
+            ) : (
+              <div className="dot-overtaking"></div>
+            )}
           </div>
         </div>
       </>
