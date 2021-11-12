@@ -20,7 +20,7 @@ class App extends React.Component<{}, AppState> {
     };
   }
 
-  public getPosts(domain) {
+  private getPosts(domain) {
     new Wordpress(domain).getPosts().then((posts) => {
       const newPostsList = [...this.state.posts, ...posts].sort((a, b) => {
         return new Date(b.date).getTime() - new Date(a.date).getTime();
@@ -38,15 +38,13 @@ class App extends React.Component<{}, AppState> {
       existingDomains.forEach((domain) => {
         this.getPosts(domain);
       });
-    } else {
-      this.setState({ domainsList: [] });
     }
   }
 
-  public addNewDomain = (domain) => {
+  private addNewDomain = (domain) => {
     const existingDomains = localStorage.getItem("domains");
 
-    if (!existingDomains.includes(domain)) {
+    if (existingDomains && !existingDomains.includes(domain)) {
       const newDomainsList = existingDomains
         ? [...JSON.parse(existingDomains)]
         : [...this.state.domainsList];
@@ -63,7 +61,7 @@ class App extends React.Component<{}, AppState> {
     }
   };
 
-  public deleteDomain = (index) => {
+  private deleteDomain = (index) => {
     const newDomainsList = [...this.state.domainsList];
     newDomainsList.splice(index, 1);
 
