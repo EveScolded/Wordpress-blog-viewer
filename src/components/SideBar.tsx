@@ -26,7 +26,7 @@ export default class SideBar extends React.Component<
   private inputConfirm = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
-      this.props.addNewDomain(e.target.value);
+      this.props.addNewDomain(e.target.value.replace(/\/$/, ""));
       e.target.value = "";
     }
   };
@@ -58,10 +58,10 @@ export default class SideBar extends React.Component<
           Added domain:
           <Button onClick={this.showDeleteButtons}>edit</Button>
         </div>
-        <ul className={classes.domainList}>
+        <ul>
           {this.props.domainList.map((domain, index) => {
             return (
-              <>
+              <div className={classes.domainListItem}>
                 <li>{domain}</li>
                 {this.state.deleteButtons && (
                   <Button
@@ -70,7 +70,7 @@ export default class SideBar extends React.Component<
                     x
                   </Button>
                 )}
-              </>
+              </div>
             );
           })}
         </ul>

@@ -21,7 +21,7 @@ class App extends React.Component<{}, AppState> {
   }
 
   private getPosts(domain) {
-    new Wordpress(domain).getPosts().then((posts) => {
+    return new Wordpress(domain).getPosts().then((posts) => {
       const newPostsList = [...this.state.posts, ...posts].sort((a, b) => {
         return new Date(b.date).getTime() - new Date(a.date).getTime();
       });
@@ -41,24 +41,32 @@ class App extends React.Component<{}, AppState> {
     }
   }
 
-  private addNewDomain = (domain) => {
+  private addNewDomain = async (domain) => {
     const existingDomains = localStorage.getItem("domains");
 
     if (
       !existingDomains ||
       (existingDomains && !existingDomains.includes(domain))
     ) {
-      const newDomainsList = existingDomains
-        ? [...JSON.parse(existingDomains)]
-        : [...this.state.domainsList];
+      try {
+        await this.getPosts(domain);
 
-      newDomainsList.push(domain);
+        const newDomainsList = existingDomains
+          ? [...JSON.parse(existingDomains)]
+          : [...this.state.domainsList];
 
-      this.setState({ domainsList: newDomainsList }, () =>
-        localStorage.setItem("domains", JSON.stringify(this.state.domainsList))
-      );
+        newDomainsList.push(domain);
 
-      this.getPosts(domain);
+        this.setState({ domainsList: newDomainsList }, () =>
+          localStorage.setItem(
+            "domains",
+            JSON.stringify(this.state.domainsList)
+          )
+        );
+      } catch (error) {
+        alert("Incorrect domain!");
+        console.log(error.message);
+      }
     } else {
       alert("Domain already exsists.");
     }
@@ -93,10 +101,10 @@ class App extends React.Component<{}, AppState> {
           <div className="postList">
             {this.state.posts.length ? (
               <PostList posts={this.state.posts}></PostList>
-            ) : this.state.posts ? (
-              <p>Add domain to view posts.</p>
-            ) : (
+            ) : this.state.domainsList.length ? (
               <div className="dot-overtaking"></div>
+            ) : (
+              <p>Add domain to view posts.</p>
             )}
           </div>
         </div>

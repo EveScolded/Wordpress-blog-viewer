@@ -15,9 +15,10 @@
   margin-top: 30px;
 }
 
-.domainList {
+.domainListItem {
   display: flex;
   justify-content: space-between;
+  padding: 4px;
 }
 
 .domainForm {
