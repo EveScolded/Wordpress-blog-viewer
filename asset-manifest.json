@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/Wordpress-blog-viewer/static/css/main.a00cdc8c.chunk.css",
-    "main.js": "/Wordpress-blog-viewer/static/js/main.e84b9c0d.chunk.js",
-    "main.js.map": "/Wordpress-blog-viewer/static/js/main.e84b9c0d.chunk.js.map",
+    "main.js": "/Wordpress-blog-viewer/static/js/main.cda633c0.chunk.js",
+    "main.js.map": "/Wordpress-blog-viewer/static/js/main.cda633c0.chunk.js.map",
     "runtime-main.js": "/Wordpress-blog-viewer/static/js/runtime-main.5a8965b6.js",
     "runtime-main.js.map": "/Wordpress-blog-viewer/static/js/runtime-main.5a8965b6.js.map",
-    "static/js/2.e90dd629.chunk.js": "/Wordpress-blog-viewer/static/js/2.e90dd629.chunk.js",
-    "static/js/2.e90dd629.chunk.js.map": "/Wordpress-blog-viewer/static/js/2.e90dd629.chunk.js.map",
+    "static/js/2.1ad858b9.chunk.js": "/Wordpress-blog-viewer/static/js/2.1ad858b9.chunk.js",
+    "static/js/2.1ad858b9.chunk.js.map": "/Wordpress-blog-viewer/static/js/2.1ad858b9.chunk.js.map",
     "static/js/3.58fcb9cf.chunk.js": "/Wordpress-blog-viewer/static/js/3.58fcb9cf.chunk.js",
     "static/js/3.58fcb9cf.chunk.js.map": "/Wordpress-blog-viewer/static/js/3.58fcb9cf.chunk.js.map",
     "index.html": "/Wordpress-blog-viewer/index.html",
     "static/css/main.a00cdc8c.chunk.css.map": "/Wordpress-blog-viewer/static/css/main.a00cdc8c.chunk.css.map",
-    "static/js/2.e90dd629.chunk.js.LICENSE.txt": "/Wordpress-blog-viewer/static/js/2.e90dd629.chunk.js.LICENSE.txt",
+    "static/js/2.1ad858b9.chunk.js.LICENSE.txt": "/Wordpress-blog-viewer/static/js/2.1ad858b9.chunk.js.LICENSE.txt",
     "static/media/index.css": "/Wordpress-blog-viewer/static/media/wall.30a77dee.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.5a8965b6.js",
-    "static/js/2.e90dd629.chunk.js",
+    "static/js/2.1ad858b9.chunk.js",
     "static/css/main.a00cdc8c.chunk.css",
-    "static/js/main.e84b9c0d.chunk.js"
+    "static/js/main.cda633c0.chunk.js"
   ]
 }
