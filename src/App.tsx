@@ -64,17 +64,18 @@ class App extends React.Component<{}, AppState> {
     }
   };
 
-  private deleteDomain = (index) => {
+  private deleteDomain = (domain, index) => {
     const newDomainsList = [...this.state.domainsList];
     newDomainsList.splice(index, 1);
+    this.setState({ domainsList: newDomainsList }, () =>
+      localStorage.setItem("domains", JSON.stringify(this.state.domainsList))
+    );
 
-    this.setState({ domainsList: newDomainsList });
-
-    this.state.domainsList.forEach((domain) => {
-      this.getPosts(domain);
-    });
-
-    localStorage.setItem("domains", JSON.stringify(this.state.domainsList));
+    const existingPosts = [...this.state.posts];
+    const filteredPosts = existingPosts.filter(
+      (post) => !post.link.includes(domain)
+    );
+    this.setState({ posts: filteredPosts });
   };
 
   public render() {
@@ -92,6 +93,8 @@ class App extends React.Component<{}, AppState> {
           <div className="postList">
             {this.state.posts.length ? (
               <PostList posts={this.state.posts}></PostList>
+            ) : this.state.posts ? (
+              <p>Add domain to view posts.</p>
             ) : (
               <div className="dot-overtaking"></div>
             )}
