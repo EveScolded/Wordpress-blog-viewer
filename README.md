@@ -12,3 +12,9 @@ React app using basic core features and building blocks:
 ## Live view
 
 https://evescolded.github.io/Wordpress-blog-viewer/
+
+Try with blogs:
+
+- https://abrokenbackpack.com
+- https://www.lilistravelplans.com
+- https://littlehungrylady.pl
